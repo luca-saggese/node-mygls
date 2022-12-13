@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./lib",
+    "moduleResolution": "node",
+    "lib": [
+      "esnext.asynciterable",
+      "es2017",
+      "dom"
+    ]
+  },
+  "include":[
+    "./src"
+  ]
+}

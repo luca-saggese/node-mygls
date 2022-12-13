@@ -1,0 +1,80 @@
+{
+  "_from": "@bart.sk-ecommerce/node-mygls",
+  "_id": "@bart.sk-ecommerce/node-mygls@1.0.3",
+  "_inBundle": false,
+  "_integrity": "sha512-u5pUB5ZWbWj2J2aP/GpzZ/9G1dwldzxCtLU1h+IFFdMa2iarhN4mWzWQWMjHwLpqDAVEcbwqHbhYVTaqqXeZ+A==",
+  "_location": "/@bart.sk-ecommerce/node-mygls",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@bart.sk-ecommerce/node-mygls",
+    "name": "@bart.sk-ecommerce/node-mygls",
+    "escapedName": "@bart.sk-ecommerce%2fnode-mygls",
+    "scope": "@bart.sk-ecommerce",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@bart.sk-ecommerce/node-mygls/-/node-mygls-1.0.3.tgz",
+  "_shasum": "0614a5cb7167ff6af5f6178c496869056d7a45f2",
+  "_spec": "@bart.sk-ecommerce/node-mygls",
+  "_where": "/Users/lvx/Dev/ivegan-gls",
+  "author": {
+    "name": "Denis Lukčo[lukco@bart.sk]"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "axios": "^0.19.2",
+    "js-sha512": "^0.8.0"
+  },
+  "deprecated": false,
+  "description": "node-js-wrapper from mygls",
+  "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "@types/node": "^11.15.2",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.7",
+    "ts-jest": "^25.2.0",
+    "ts-node": "^8.5.2",
+    "typedoc": "^0.16.9",
+    "typedoc-plugin-markdown": "^2.2.11",
+    "typescript": "^3.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn docs && git add docs/* && lint-staged && yarn build && git add lib/*"
+    }
+  },
+  "license": "MIT",
+  "lint-staged": {
+    "*.ts": [
+      "npx prettier --write src/**/*.ts",
+      "git add",
+      "yarn lint"
+    ]
+  },
+  "main": "lib/index.js",
+  "name": "@bart.sk-ecommerce/node-mygls",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.bart.sk:open-source/node-liveagent.git"
+  },
+  "scripts": {
+    "build": "rm -rf ./lib && npx tsc && touch lib/.gitkeep",
+    "docs": "npx typedoc --theme markdown --out docs ./src",
+    "lint": "npx eslint 'src/**/*.ts'",
+    "pretty": "npx prettier --write src/**/*.ts",
+    "test": "npx jest",
+    "watch": "nodemon --delay 0.5 --ignore lib --exec yarn run build"
+  },
+  "version": "1.0.3"
+}
